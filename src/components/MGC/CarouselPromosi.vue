@@ -1,42 +1,56 @@
 <template>
-  <div>
+  <div class="col-md-12 col-12 p-0">
     <!-- v-for="item in listItem" :key="item.id" -->
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div
-          v-bind:class="['carousel-item' , { 'active': index === 0 }]"
-          v-for="(list,index) in listItem.data"
+          v-bind:class="['carousel-item', { active: index === 0 }]"
+          v-for="(list, index) in listItem.data"
           :key="index"
         >
           <div
-            class="col-md-12 col-12 mt-3 justify-content-center mx-auto px-5"
+            class="col-md-12 col-12 mt-3 p-0 m-0 justify-content-center"
             style="background-color: white; border: 1px #dbdbdb solid;border-style: solid;"
           >
-            <img v-bind:src="list.img" style="height:200px;" alt />
-            <hr
-              style=" height: 0px;  border: 1px #f7f7f7 solid;border-style: solid;padding:0px !important"
-            />
-            <div class="row justify-content-center">
-              <div class="col-md-8 col-12">
-                <h4 class="text-left font12" style="color:black !important;">{{list.nama_produk}}</h4>
-                <p class="text-left font11" style="color:gray !important;">{{list.deskripsi}}</p>
+            <img v-bind:src="list.img" class="w-100 p-0 m-0" style="min-height:100%" alt />
+            <div class="row justify-content-center d-flex spaceCarousel mt-5">
+              <div class="col-md-8 col-8">
+                <h4
+                  class="text-left font13 my-0 py-0"
+                  style="color:black !important;"
+                >{{ list.nama_produk }}</h4>
+                <p class="text-left font10" style="color:gray !important;">{{ list.deskripsi }}</p>
               </div>
-              <div class="col-md-2 col-12">
+              <div class="col-md-2 col-4 px-3">
                 <router-link
-                  v-bind:to="'/mgc/claimpromotion/'+`${$route.params.outlet_id}/`+list.kode_produk"
+                  v-bind:to="
+                    '/mgc/claimpromotion/' +
+                      `${$route.params.outlet_id}/` +
+                      list.kode_produk
+                  "
                   class="btn col-md-12 col-12 colorMondelez text-white p-1 mb-2"
                   style="border-radius: 10px !important;"
                 >
-                  <p class="text-white my-auto font15">Claim</p>
+                  <p class="text-white my-auto font11">Claim</p>
                 </router-link>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleIndicators"
+          data-slide-to="0"
+          v-bind:class="[{ active: index === 0 }]"
+          v-for="(list, index) in listItem.data"
+          :key="index"
+        ></li>
+      </ol>
       <a
         class="carousel-control-prev"
-        href="#carouselExampleControls"
+        href="#carouselExampleIndicators"
         role="button"
         data-slide="prev"
       >
@@ -45,7 +59,7 @@
       </a>
       <a
         class="carousel-control-next"
-        href="#carouselExampleControls"
+        href="#carouselExampleIndicators"
         role="button"
         data-slide="next"
       >
@@ -69,6 +83,43 @@ export default {
 </script>
 
 <style>
+.carousel-control-prev-icon {
+  background-image: url(../../assets/prev.svg) !important;
+}
+.carousel-control-next-icon {
+  background-image: url(../../assets/next.svg) !important;
+}
+
+.carousel-indicators {
+  position: relative !important;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+.carousel-indicators li {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #e19e29 !important;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+
 .carousel-item {
   position: relative;
   display: none;
@@ -84,13 +135,18 @@ export default {
   z-index: 10;
   position: relative;
 }
+.spaceCarousel {
+  padding: 0px !important;
+}
 @media screen and (max-width: 1000px) {
   .icon {
     width: 75% !important;
     z-index: 10;
     position: relative;
   }
-
+  .spaceCarousel {
+    padding: 0px 1rem 0px 1rem !important;
+  }
   .font11 {
     font-size: 11px !important;
   }

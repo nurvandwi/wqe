@@ -7,6 +7,7 @@ import Login from "../views/MGC/Login.vue";
 import TransaksiMgc from "../views/MGC/Transaksi.vue";
 import DetailTransaksiMgc from "../views/MGC/DetailTransaksi.vue";
 import MgcRegistrasi from "../views/MGC/Registrasi.vue";
+import Invoice from "../views/MGC/Invoice.vue";
 import ClaimPromotionMgc from "../views/MGC/ClaimPromotion.vue";
 import DashboardInsentifMgc from "../views/MGC/DashboardInsentif.vue";
 import PromosiMgc from "../views/MGC/Promosi.vue"
@@ -28,6 +29,13 @@ const routes = [
     props: true,
     name: "PromosiMgc",
     component: PromosiMgc,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("token") == null) {
+        next("/MGC/login");
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/Mvg/Promosi",
@@ -36,7 +44,7 @@ const routes = [
     component: PromosiMvg,
   },
   {
-    path: "/MGC",
+    path: "",
     props: true,
     name: "BannerPromoMgc",
     component: BannerPromoMgc,
@@ -70,6 +78,13 @@ const routes = [
     props: true,
     name: "TransaksiMgc",
     component: TransaksiMgc,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("token") == null) {
+        next("/MGC/login");
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/Mvg/Transaksi",
@@ -94,6 +109,13 @@ const routes = [
     props: true,
     name: "MgcRegistrasi",
     component: MgcRegistrasi,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("token") == null) {
+        next("/MGC/login");
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/Mvg/Registrasi",
@@ -102,10 +124,23 @@ const routes = [
     component: MvgRegistrasi,
   },
   {
+    path: "/Mgc/Invoice/:outlet_id",
+    props: true,
+    name: "Invoice",
+    component: Invoice,
+  },
+  {
     path: "/Mgc/ClaimPromotion/:outlet_id/:kode_produk",
     props: true,
     name: "ClaimPromotionMgc",
     component: ClaimPromotionMgc,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("token") == null) {
+        next("/MGC/login");
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/Mvg/ClaimPromotion",
@@ -118,6 +153,13 @@ const routes = [
     props: true,
     name: "DashboardInsentifMgc",
     component: DashboardInsentifMgc,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("token") == null) {
+        next("/MGC/login");
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/Mvg/DashboardInsentif",
@@ -130,5 +172,6 @@ const routes = [
 const router = new VueRouter({
 
   routes
+
 });
 export default router;

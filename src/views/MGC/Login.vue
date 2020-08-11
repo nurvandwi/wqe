@@ -20,7 +20,7 @@ export default {
       urlencoded.append("password", password);
       axios
         .post(
-          "https://www.inosis.co.id/mv_promosi_api/api.php/login",
+          "https://www.inosis.co.id/demo_promosi_api/api.php/login",
           urlencoded
         )
         .then(response => {

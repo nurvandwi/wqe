@@ -1,11 +1,11 @@
 <template>
   <div class="stylePromo">
-    <img class="logoMondelez mb-4 d-block mx-auto" src="../../assets/LogoMondelez.png" alt />
+    <img class="logoMondelez mb-4 d-block mx-auto" src="../../assets/mgc-logo.png" alt />
     <div class="col-10 col-md-8 mx-auto mb-4 mt-2 p-0">
       <h2 class="mt-3 mb-5 font15">
         <b>Dapatkan Promo Menarik untuk Pelanggan anda disini</b>
       </h2>
-      <img class="logoPromo mb-4" src="https://i.imgur.com/2jLaxqv.jpg" alt />
+      <img class="logoPromo mb-4" src="../../assets/herobanner.jpg" alt />
     </div>
     <div class="col-md-11 col 10 styleUl mx-2">
       <ul class="text-left px-0 my-5 styleLi">

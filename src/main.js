@@ -23,7 +23,7 @@ new Vue({
 Vue.use(VueCurrencyFilter, {
   symbol: "",
   thousandsSeparator: ".",
-  fractionCount: 2,
+  fractionCount: 0,
   fractionSeparator: ",",
   symbolPosition: "front",
   symbolSpacing: true

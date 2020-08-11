@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-3">
     <div class="mx-2 mt-3">
       <boxtitle firstTitle="Transaksi" class="mb-2" />
     </div>
@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://www.inosis.co.id/mv_promosi_api/api.php/list-transaksi", {
+      .get("https://www.inosis.co.id/demo_promosi_api/api.php/list-transaksi", {
         params: {
           outlet_id: this.$route.params.outlet_id,
           kode_transaksi: this.$route.params.kode_transaksi,

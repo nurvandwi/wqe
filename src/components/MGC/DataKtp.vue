@@ -4,13 +4,15 @@
       <div>
         <div
           class="col-md-12 text-left d-flex flex-row align-items-center my-3 py-2 px-3"
-          style="background-color:white !important; border: 1px #dbdbdb solid;border-style: solid;"
+          style="background-color:white !important; border: 1px #dbdbdb solid;border-style: solid;border-radius:15px;"
         >
-          <img class="imagecustom pr-3" src="https://i.imgur.com/JWwWXrO.png" alt />
+          <img class="imagecustom pr-3" src="https://i.imgur.com/g4sAQkz.png" alt />
+
           <div class="align-items-center">
-            <h5 class="formh2 caption4 p-0 m-0" style="color:black !important">Data KTP & Buku Bank</h5>
-            <p class="formp section3 p-0 m-0">Klik untuk lengkapi data eKTP & Buku Bank</p>
+            <h5 class="formh2 caption4 p-0 m-0 text-dark">Data KTP & Buku Bank</h5>
+            <p class="formp section3 p-0 m-0 text-dark">Klik untuk lengkapi data eKTP & Buku Bank</p>
           </div>
+          <img class="iconcustom ml-auto" src="https://i.imgur.com/5qg2kk5.png" alt />
         </div>
       </div>
     </router-link>
@@ -23,5 +25,9 @@ export default {};
 .imagecustom {
   background-size: cover;
   height: 30px;
+}
+.iconcustom {
+  background-size: cover;
+  height: 15px;
 }
 </style>

@@ -22,16 +22,16 @@
           </div>
           <div class="d-flex justify-content-between">
             <h5 class="text-dark font14">Produk</h5>
-            <h5 class="text-dark font14">Oreo</h5>
+            <h5 class="text-dark font14">{{detailTransaksi.nama_produk}}</h5>
           </div>
           <div class="d-flex justify-content-between">
             <h5 class="text-dark font14">Jumlah</h5>
             <h5 class="text-dark font14">{{detailTransaksi.quantity }}</h5>
           </div>
-          <div class="d-flex justify-content-between">
+          <!-- <div class="d-flex justify-content-between">
             <h5 class="text-dark font14">Nominal</h5>
-            <h5 class="text-dark font14">{{detailTransaksi.nominal }}</h5>
-          </div>
+            <h5 class="text-dark font14">{{detailTransaksi.nominal|currency }}</h5>
+          </div>-->
         </div>
       </div>
     </div>
@@ -52,13 +52,16 @@ export default {
   },
   mounted() {
     axios
-      .get("https://www.inosis.co.id/mv_promosi_api/api.php/detail-transaksi", {
-        params: {
-          outlet_id: this.$route.params.outlet_id,
-          kode_transaksi: this.$route.params.kode_transaksi,
-          token: localStorage.token
+      .get(
+        "https://www.inosis.co.id/demo_promosi_api/api.php/detail-transaksi",
+        {
+          params: {
+            outlet_id: this.$route.params.outlet_id,
+            kode_transaksi: this.$route.params.kode_transaksi,
+            token: localStorage.token
+          }
         }
-      })
+      )
       .then(res => (this.detailTransaksi = res.data))
       .catch(err => console.log(err));
   }

@@ -2,10 +2,13 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12">
-        <img class="imgLogo mb-5" src="../../assets/LogoMondelez.png" alt />
+        <img class="logoMondelez d-block mx-auto" src="../../assets/mgc-logo.png" alt />
       </div>
-      <div class="mt-5 mb-2 px-5 col-10">
-        <h2 class="font25" style=" font-family:Layar Bahtera light">Masuk kedalam account anda</h2>
+      <div class="mt-5 mb-2 px-2 col-10">
+        <h2 class="font25" style=" font-family:Layar Bahtera light">
+          Masuk
+          <br />ke account anda
+        </h2>
       </div>
       <div class="col-md-10 p-0">
         <div class="col-md-12">
