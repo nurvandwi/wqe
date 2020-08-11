@@ -264,13 +264,13 @@ export default {
       dropzoneOptions: {
         url:
           "https://www.inosis.co.id/demo_promosi_api/api.php/update-outlet-simple",
-        maxFiles: 1,
-        resizeWidth: 640,
-        maxFilesize: 2,
         thumbnailHeight: 250,
         thumbnailWidth: 450,
         addRemoveLinks: true,
         autoProcessQueue: false,
+        maxFiles: 1,
+        maxFileSize: 0.06,
+        acceptedFiles: "image/*",
       },
     };
   },
