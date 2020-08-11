@@ -271,6 +271,13 @@ export default {
         maxFiles: 1,
         maxFileSize: 0.06,
         acceptedFiles: "image/*",
+        init: function() {
+          console.log("init");
+          this.on("error", function(file, message) {
+            alert(message);
+            this.removeFile(file);
+          });
+        },
       },
     };
   },
