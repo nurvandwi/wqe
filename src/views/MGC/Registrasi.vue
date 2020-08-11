@@ -266,7 +266,7 @@ export default {
           "https://www.inosis.co.id/demo_promosi_api/api.php/update-outlet-simple",
         maxFiles: 1,
         resizeWidth: 640,
-        maxFilesizeInMB: 2,
+        maxFilesize: 2,
         thumbnailHeight: 250,
         thumbnailWidth: 450,
         addRemoveLinks: true,
